@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-string-format",     "homepage": "https://github.com/npmtest/node-npmtest-string-format",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-string-format.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [string-format (v0.5.0)](https://github.com/davidchambers/string-format)  [![npm package](https://img.shields.io/npm/v/npmtest-string-format.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-string-format) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-string-format.svg)](https://travis-ci.org/npmtest/node-npmtest-string-format)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-string-format",
+    "keywords": [
+        "coverage",
+        "test",
+        "string-format"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_string_format.js",
+    "name": "npmtest-string-format",
+    "nameAlias": "npmtest_string_format",
+    "nameOriginal": "npmtest-string-format",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-string-format.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
